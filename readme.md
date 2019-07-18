@@ -39,7 +39,7 @@
 ## 发布
 1) 安装发布工具  
     ```
-    pip install twine
+    python -m pip install setuptools wheel twine
     ```
 2) 构建
     ```
@@ -47,7 +47,7 @@
     ```
 3) 上传
     ```
-    wine upload -r pypi dist/* 
+    twine upload -r pypi dist/* 
     ```
     > -r即指明服务器id，可以是`.pypirc`下的任一可用地址，即可发布到远程仓库
 
