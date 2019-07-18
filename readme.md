@@ -43,7 +43,7 @@
     ```
 2) 构建
     ```
-    python setup.py sdist
+    python setup.py sdist bdist_wheel
     ```
 3) 上传
     ```

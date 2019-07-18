@@ -1,1 +1,3 @@
-from .logger import Logger
+from .log4py import Logger
+
+name = "log4py"
