@@ -37,6 +37,7 @@
     trusted-host = https://pypi.tuna.tsinghua.edu.cn 
     ```    
 ## 发布
+> 参考[官方文档](https://docs.python.org/zh-cn/3/distributing/index.html)
 1) 安装发布工具  
     ```
     python -m pip install setuptools wheel twine
