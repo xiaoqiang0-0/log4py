@@ -15,7 +15,7 @@
 3) 创建`pypi-group`仓库  
     应该包括hosted和proxy，主要用于对外统一暴露
     > 可以配置到`pip.conf`中，后边需要加`simple`
-4) 本地用户目录下增加`.pypirc`文件  
+4) 本地用户目录下增加`~/.pypirc`文件  
     内容示范：
     ```
     [distutils]
@@ -28,7 +28,7 @@
     password:your_password
     ```
     > `pypi`为自定义上传服务器`id`类似`maven`中`setting.xml`中的`server`节点，可以在`index-servers`的值后追加，直接换行即可，无需分割符号
-5) 客户端增加`.pip/pip.conf`文件  
+5) 客户端增加`~/.pip/pip.conf`文件  
     用于配置私服地址，index-url直接写group仓库地址加simple结尾即可
     ```
     [global] 
@@ -36,3 +36,24 @@
     [install]
     trusted-host = https://pypi.tuna.tsinghua.edu.cn 
     ```    
+## 发布
+1) 安装发布工具  
+    ```
+    pip install twine
+    ```
+2) 构建
+    ```
+    python setup.py sdist
+    ```
+3) 上传
+    ```
+    wine upload -r pypi dist/* 
+    ```
+    > -r即指明服务器id，可以是`.pypirc`下的任一可用地址，即可发布到远程仓库
+
+## 安装
+1) 客户端创建`~/.pip/pip.conf`  
+2) 安装
+    ```pip
+    pip install xxx
+    ```
